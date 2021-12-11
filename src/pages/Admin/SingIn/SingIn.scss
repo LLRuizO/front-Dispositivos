@@ -1,0 +1,81 @@
+@import "../../../scss/index.scss";
+
+//sing-in es la clase principal de nuestro componente
+.sing-in{
+    background-image: url("../../../assets/img/png/background-v1.jpg");
+    background-repeat: no-repeat;
+    background-position:center center;
+    background-size: cover;
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+
+        &-logo{
+            padding: 60px 20px;
+            img{
+                width: 100%;
+            }
+        }
+
+        &-tabs{
+            background-color: $background-ligth ;
+
+            //Tomamos algunas variables que hemos definido desde _variables.scss
+            .ant-tabs{
+                width: 90vw;
+                @media (min-width: $media-breackpoint-up-lg) { //Usamos algunas clases hechas de antdesing para que sea responsiv
+                    width: auto;
+                }
+            }
+
+            .ant-tabs-nav-container{
+                height: 60px !important;
+            }
+            .ant-tabs-nav{
+                width: 100%;
+            }
+
+            .ant-tabs-tab{
+                width: 50%;
+                height: 60px !important;
+                text-align: center;
+                font-size: 0em + 19px / $defaultFontSize; //Para que se vaya ajustando automaticamente a la pantalla
+                border-top: 4px solid $border-grey !important;
+                border-radius: 0 !important;
+                @media (min-width: $media-breackpoint-up-lg){
+                    width: 220px;
+                    font-size: 0em + 23px /  $defaultFontSize;
+                }
+
+                &:hover{
+                    color: $font-grey-dark;
+                }
+                &:before{
+                    content: none;
+                }
+                span{
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center; //Estaba en justify-items y debe ir en justify-content
+                }
+            }
+
+            .ant-tabs-tab-active{
+                color: $primary-color !important;
+                border-top: 4px solid $primary-color !important;
+                border-radius: 0 !important;
+                border-right: 0 !important;
+                border-left: 0 !important;
+            }
+
+            .ant-tabs-content{
+                padding: 0 16px 16px 16px;
+                text-align: center;
+            }
+        }
+    }
+}
